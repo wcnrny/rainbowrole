@@ -18,10 +18,14 @@ bot.on("ready", (ready) => {
 //TOKEN="tokenınız buraya"
 //KURUCU_ID="kendi idniz buraya"
 //ROLE_ID="rolünüzün idsi buraya"
+bot.on("ready", () => {
+  console.log("Rainbow Role Bot Hazır!")
+});
 
 bot.on("message", (message) => {
   if(message.content === "!rainbowBaslat") {
     if(message.author.id === process.env.KURUCU_ID) {
+        console.log("başarılı")
         message.delete({ timeout: 10000 })
           let rRole = message.guild.roles.cache.get(process.env.ROLE_ID)
             if(!rRole) {
